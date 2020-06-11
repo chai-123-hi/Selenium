@@ -1,0 +1,28 @@
+package selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Title {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "E://chrome//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://flipkart.com");
+		
+		String aTitle = "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
+		
+		String eTitle = driver.getTitle();
+		if(aTitle.equals(eTitle))
+			System.out.println("Title matches");
+		
+		else
+			System.out.println("Error in title matching");
+		
+		driver.close();
+		
+	}
+
+}
