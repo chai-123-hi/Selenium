@@ -1,0 +1,31 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Checkbox {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "E://chrome//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://spicejet.com");
+		
+WebElement chkbox = driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_friendsandfamily']"));
+chkbox.click();
+
+Thread.sleep(10000);
+
+     if(chkbox.isSelected())
+    	 System.out.println("checkbox is selected");
+     else
+    	 System.out.println("is not selected");
+
+     driver.close();
+
+	}
+
+}
