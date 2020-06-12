@@ -1,0 +1,32 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Radiobutton {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "E://chrome//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://spicejet.com");
+		
+WebElement rbtn = driver.findElement(By.xpath("//input[@id='ctl00_mainContent_rbtnl_Trip_1' and @name='ctl00$mainContent$rbtnl_Trip']"));
+rbtn.click();
+Thread.sleep(10000);
+
+if(rbtn.isSelected())
+	 System.out.println("Radio btn is selected");
+else
+	 System.out.println("is not selected");
+
+driver.close();
+
+		
+		
+	}
+
+}
