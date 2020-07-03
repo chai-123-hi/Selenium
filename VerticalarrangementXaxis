@@ -1,0 +1,37 @@
+package com.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class horizontalarrangementYAXIS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\91948\\Downloads\\Study_Softwares\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+
+WebElement	email = driver.findElement(By.xpath("//input[@id='email']"));
+
+ int x1 = email.getLocation().getY();
+ 
+            WebElement pwd = driver.findElement(By.xpath("//input[@name='pass']"));
+            
+         int x2 = pwd.getLocation().getY();
+         
+         if(x1 == x2)
+         System.out.println("vertically arranged"); 
+         
+         else
+        	 System.out.println("not vertically arranged");
+         
+         driver.close();
+ 
+	}
+
+}
