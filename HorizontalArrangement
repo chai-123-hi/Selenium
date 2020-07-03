@@ -1,0 +1,38 @@
+package com.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class horizontalarrangement {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\91948\\Downloads\\Study_Softwares\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+	    
+		
+		WebElement un = driver.findElement(By.xpath("//input[@type='text' and @class = '_2zrpKA _1dBPDZ']"));
+		
+		 int x1 = un.getLocation().getX();
+		 
+		 WebElement pwd = driver.findElement(By.xpath("//input[@class=\"_2zrpKA _3v41xv _1dBPDZ\"]"));
+		 
+		 int x2 = pwd.getLocation().getX();
+		 
+		 Thread.sleep(1000);
+		 
+		 if(x1==x2)
+			 System.out.println("arranged horizontally");
+		 else
+			 System.out.println("no");
+
+
+		 driver.close();
+	}
+
+}
