@@ -26,6 +26,20 @@ WebElement	email = driver.findElement(By.xpath("//input[@id='email']"));
 
   else
 	  System.out.println("not of same height");
+  
+  System.out.println("****************************************");
+  
+  WebElement	email1 = driver.findElement(By.xpath("//input[@id='email']"));
+  int w1 = email1.getSize().getWidth();
+  
+ WebElement pwd1 = driver.findElement(By.xpath("//input[@name='pass']"));
+  int w2 = pwd1.getSize().getWidth();
+  
+  if(w1==w2)
+	  System.out.println("same width");
+  else
+	  System.out.println("not of same width");
+  
 
 	driver.close();
 	}
